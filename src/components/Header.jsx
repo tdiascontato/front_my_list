@@ -1,3 +1,4 @@
+import styles from './styles/header.module.css';
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -14,10 +15,10 @@ export default function Header() {
   };
 
   return (
-    <header className="header container">
-      <h1>Bem vindo, <span style={{ color: '#007BFF' }}>{name}</span></h1>
-      <button className="logout-btn" onClick={handleLogout}>
-        Sair
+    <header className={styles.header + " container"}>
+      <h1>Bem vindo, <span style={{ color: '#f59d2a' }}>{name}</span>!</h1>
+      <button className={styles.logoutBtn} onClick={handleLogout}>
+        Logout
       </button>
     </header>
   );

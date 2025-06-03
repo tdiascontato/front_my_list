@@ -6,12 +6,9 @@ import { getLeads, createLead, deleteLead, updateLead, searchLeads } from '../ap
 import axios from 'axios';
 import PatchLead from '../components/popups/patch_lead';
 import InputSearch from '../components/inputs/InputSearch';
+import FormHome from '../components/forms/form_home';
 
 export default function Home() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [pictureFile, setPictureFile] = useState(null);
   const [leads, setLeads] = useState([]);
   const [randomUsers, setRandomUsers] = useState([]);
   const [editingLead, setEditingLead] = useState(null);
@@ -33,24 +30,11 @@ export default function Home() {
       .catch((err) => console.error('Erro ao buscar usuários', err));
   }, []);
 
-  const handleCreateLead = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    if (pictureFile) {
-      formData.append('image', pictureFile);
-    }
-
+  const handleCreateLead = async (formData, resetForm) => {
     try {
       await createLead(formData);
-      setName('');
-      setEmail('');
-      setPhone('');
-      setPictureFile(null);
       fetchLeads();
+      resetForm();
     } catch (err) {
       console.error('Erro ao criar lead', err);
     }
@@ -97,46 +81,7 @@ export default function Home() {
       <InputSearch onSearch={handleSearch} />
       <section style={{ marginBottom: '2rem' }}>
         <h2>Cadastrar Lead</h2>
-        <form onSubmit={handleCreateLead}>
-          <label htmlFor="lead-name">Nome:</label>
-          <input
-            id="lead-name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-
-          <label htmlFor="lead-email" style={{ marginTop: '1rem' }}>Email:</label>
-          <input
-            id="lead-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-
-          <label htmlFor="lead-phone" style={{ marginTop: '1rem' }}>Telefone:</label>
-          <input
-            id="lead-phone"
-            type="text"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-
-          <label htmlFor="lead-picture" style={{ marginTop: '1rem' }}>Foto (opcional):</label>
-          <input
-            id="lead-picture"
-            type="file"
-            accept="image/*"
-            onChange={(e) => setPictureFile(e.target.files[0])}
-          />
-
-          <button type="submit" style={{ marginTop: '1rem' }}>
-            Cadastrar
-          </button>
-        </form>
+        <FormHome onSubmit={handleCreateLead} />
       </section>
 
       <section style={{ marginBottom: '2rem' }}>

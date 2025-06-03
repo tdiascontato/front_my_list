@@ -1,10 +1,11 @@
+import styles from './styles/layout.module.css';
 import Header from './Header';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className={styles.layoutRoot}>
       <Header />
-      <main className="container">{children}</main>
+      <main className={styles.mainContent}>{children}</main>
     </div>
   );
 }

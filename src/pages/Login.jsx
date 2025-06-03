@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
+import styles from './styles/login.module.css';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -21,8 +22,9 @@ export default function Login() {
   };
 
   return (
-    <div className="container" style={{ maxWidth: '400px' }}>
-      <h2>Login</h2>
+    <div className={styles.container}>
+      <img src="/leeds.png" alt="Logo" className={styles.logo} />
+      <div className={styles.title}>Entrar no My List</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input
@@ -42,13 +44,11 @@ export default function Login() {
           required
         />
 
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
 
-        <button type="submit" style={{ marginTop: '1rem', width: '100%' }}>
-          Entrar
-        </button>
+        <button type="submit">Entrar</button>
       </form>
-      <p>
+      <p className={styles.link}>
         Ainda não tem conta? <Link to="/register">Registre-se</Link>
       </p>
     </div>

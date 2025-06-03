@@ -1,6 +1,8 @@
+import styles from './styles/leadCard.module.css';
+
 export default function LeadCard({ lead, onDelete, onEdit }) {
   return (
-    <div className="card">
+    <div className={styles.card}>
       {lead.picture && (
         <img src={lead.picture} alt={lead.name} />
       )}

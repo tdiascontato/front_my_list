@@ -80,12 +80,12 @@ export default function Home() {
     <Layout>
       <InputSearch onSearch={handleSearch} />
       <section style={{ marginBottom: '2rem' }}>
-        <h2 style={{ textAlign: 'center', paddingTop: '2rem' }}>Cadastrar Lead</h2>
+        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Cadastrar Lead</h2>
         <FormHome onSubmit={handleCreateLead} />
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
-        <h2>Leads</h2>
+        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Leads</h2>
         {leads.length === 0 ? (
           <p>Nenhum lead cadastrado.</p>
         ) : (
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2>Usuários Aleatórios</h2>
+        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Usuários Aleatórios</h2>
         {randomUsers.length === 0 ? (
           <p>Carregando usuários...</p>
         ) : (

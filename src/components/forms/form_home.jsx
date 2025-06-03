@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './styles/formHome.module.css';
 
 export default function FormHome({ onSubmit }) {
   const [name, setName] = useState('');
@@ -24,7 +25,7 @@ export default function FormHome({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.formHome} onSubmit={handleSubmit}>
       <label htmlFor="lead-name">Nome:</label>
       <input
         id="lead-name"
@@ -60,7 +61,7 @@ export default function FormHome({ onSubmit }) {
         onChange={(e) => setPictureFile(e.target.files[0])}
       />
 
-      <button type="submit" style={{ marginTop: '1rem' }}>
+      <button type="submit">
         Cadastrar
       </button>
     </form>

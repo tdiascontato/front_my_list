@@ -1,0 +1,51 @@
+.formHome {
+  display: flex;
+  width: 100%;
+  max-width: 40rem;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin: 0 auto;
+}
+
+.formHome label {
+  font-weight: 500;
+}
+
+.formHome input[type="text"],
+.formHome input[type="email"],
+.formHome input[type="file"] {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.formHome input[type="file"] {
+  padding: 0.2rem 0;
+}
+
+.formHome input:focus {
+  border: 0.1rem solid #f59d2a;
+  outline: none;
+}
+
+.formHome button[type="submit"] {
+  margin-top: 1rem;
+  background: #f59d2a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.formHome button[type="submit"]:hover {
+  background: #d48806;
+}

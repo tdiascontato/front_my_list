@@ -1,9 +1,10 @@
 .inputSearchWrapper {
-  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 .inputSearchInput {
-  width: 100%;
   padding: 0.5rem;
   border: 0.1rem solid #f59d2a;
   border-radius: 0.5rem;

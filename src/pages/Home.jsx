@@ -80,7 +80,7 @@ export default function Home() {
     <Layout>
       <InputSearch onSearch={handleSearch} />
       <section style={{ marginBottom: '2rem' }}>
-        <h2>Cadastrar Lead</h2>
+        <h2 style={{ textAlign: 'center', paddingTop: '2rem' }}>Cadastrar Lead</h2>
         <FormHome onSubmit={handleCreateLead} />
       </section>
 

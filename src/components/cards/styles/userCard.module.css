@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(225, 49, 49, 0.399);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(255, 15, 15, 0.204);;
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f59d2a;
+}
+
+.card h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.card p {
+  margin: 0.1rem 0;
+  color: #666;
+  font-size: 0.97rem;
+}

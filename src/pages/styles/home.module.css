@@ -1,0 +1,14 @@
+.section {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.sectionTitleNoPad {
+  font-size: 1.2rem;
+}

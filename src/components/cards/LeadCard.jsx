@@ -11,12 +11,14 @@ export default function LeadCard({ lead, onDelete, onEdit }) {
         <p>{lead.email}</p>
         <p>{lead.phone}</p>
       </div>
-      <button onClick={() => onEdit(lead)}>
-        <span role="img" aria-label="Editar">✏️</span>
-      </button>
-      <button onClick={() => onDelete(lead.id)}>
-        <span role="img" aria-label="Excluir">🗑️</span>
-      </button>
+      <div className={styles.actions}>
+        <button onClick={() => onEdit(lead)}>
+          <span role="img" aria-label="Editar">✏️</span>
+        </button>
+        <button onClick={() => onDelete(lead.id)}>
+          <span role="img" aria-label="Excluir">🗑️</span>
+        </button>
+      </div>
     </div>
   );
 }

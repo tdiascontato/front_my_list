@@ -7,6 +7,7 @@ import axios from 'axios';
 import PatchLead from '../components/popups/patch_lead';
 import InputSearch from '../components/inputs/InputSearch';
 import FormHome from '../components/forms/form_home';
+import styles from './styles/home.module.css';
 
 export default function Home() {
   const [leads, setLeads] = useState([]);
@@ -79,13 +80,13 @@ export default function Home() {
   return (
     <Layout>
       <InputSearch onSearch={handleSearch} />
-      <section style={{ marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Cadastrar Lead</h2>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Cadastrar Lead</h2>
         <FormHome onSubmit={handleCreateLead} />
       </section>
 
-      <section style={{ marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Leads</h2>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Leads</h2>
         {leads.length === 0 ? (
           <p>Nenhum lead cadastrado.</p>
         ) : (
@@ -102,8 +103,8 @@ export default function Home() {
         )}
       </section>
 
-      <section>
-        <h2 style={{ fontSize: '1.2rem', paddingTop: '2rem' }}>Usuários Aleatórios</h2>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitleNoPad}>Usuários Aleatórios</h2>
         {randomUsers.length === 0 ? (
           <p>Carregando usuários...</p>
         ) : (

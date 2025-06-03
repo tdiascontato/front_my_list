@@ -1,0 +1,18 @@
+.inputSearchWrapper {
+  margin: 0.5rem 0;
+}
+
+.inputSearchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.1rem solid #f59d2a;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  transition: border 0.2s;
+}
+
+.inputSearchInput:focus {
+  border: 1.5px solid #f5532a;
+  outline: none;
+}

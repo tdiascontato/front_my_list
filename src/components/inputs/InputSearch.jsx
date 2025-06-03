@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './styles/inputSearch.module.css';
 
 export default function InputSearch({ onSearch }) {
   const [value, setValue] = useState('');
@@ -10,13 +11,13 @@ export default function InputSearch({ onSearch }) {
   };
 
   return (
-    <div style={{ margin: '1rem 0' }}>
+    <div className={styles.inputSearchWrapper}>
       <input
         type="text"
         placeholder="Buscar lead por nome ou email..."
         value={value}
         onChange={handleChange}
-        style={{ width: '100%', padding: '0.5rem' }}
+        className={styles.inputSearchInput}
       />
     </div>
   );
